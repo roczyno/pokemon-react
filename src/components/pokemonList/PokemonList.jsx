@@ -6,6 +6,8 @@ import SinglePokemon from "../../pages/single-pokemon/SinglePokemon";
 import Navbar from "../navbar/Navbar";
 import Skeleton from "../skeleton/Skeleton";
 import { ThemeContext } from "../../context";
+import useSound from "use-sound";
+import click from "../../sounds/success.mp3";
 
 const PokemonList = () => {
   const [data, setData] = useState([]);
@@ -15,6 +17,10 @@ const PokemonList = () => {
   const [loading, setLoading] = useState(false);
   const [pokedex, setPokedex] = useState();
   const [showData, setShowData] = useState(false);
+  const [playsound] = useSound(click, {
+    volume: 0.1,
+    interrupt: false,
+  });
 
   const getPokemons = async () => {
     try {
@@ -64,6 +70,7 @@ const PokemonList = () => {
                       onClick={() => {
                         setData([]);
                         setUrl(prevUrl);
+                        playsound();
                       }}
                     >
                       prev
@@ -73,6 +80,7 @@ const PokemonList = () => {
                     onClick={() => {
                       setData([]);
                       setUrl(nextUrl);
+                      playsound();
                     }}
                   >
                     next

@@ -1,13 +1,26 @@
 import { useContext } from "react";
 import "./single-pokemon.scss";
 import { ThemeContext } from "../../context";
+import useSound from "use-sound";
+import click from "../../sounds/click.mp3";
 
 const SinglePokemon = ({ data, showData }) => {
   const theme = useContext(ThemeContext);
   const lightMode = theme.state.lightMode;
+  const [playsound] = useSound(click, {
+    volume: 0.5,
+    interrupt: false,
+  });
+
   return (
     <div className="single-pokemon">
-      <span className="back" onClick={() => showData(false)}>
+      <span
+        className="back"
+        onClick={() => {
+          showData(false);
+          playsound();
+        }}
+      >
         Back
       </span>
       <span className="name">{data?.name}</span>
