@@ -6,12 +6,18 @@ import { useContext, useEffect, useState } from "react";
 import Sun from "../../images/sun.png";
 import Moon from "../../images/moon.png";
 import { ThemeContext } from "../../context";
+import useSound from "use-sound";
+import click from "../../sounds/click.mp3";
 
 const Navbar = ({ data, setData }) => {
   const [query, setQuery] = useState("");
   const [pokemons, setPokemons] = useState([]);
   const theme = useContext(ThemeContext);
   const lightMode = theme.state.lightMode;
+  const [playsound] = useSound(click, {
+    volume: 0.1,
+    interrupt: false,
+  });
 
   const [url, setUrl] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0"
@@ -90,7 +96,10 @@ const Navbar = ({ data, setData }) => {
         <img src={Sun} alt="" className="t-icon" />
         <div
           className="t-button"
-          onClick={handleClick}
+          onClick={() => {
+            handleClick();
+            playsound();
+          }}
           style={{ left: theme.state.lightMode ? 0 : 25 }}
         ></div>
       </div>
