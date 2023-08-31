@@ -29,10 +29,26 @@
 @media (min-width: 390px) and (max-width: 682px) {
   .pok {
     width: 100px;
-    height: 100px;
+    height: 85px;
+    h1 {
+      font-size: 17px;
+    }
     img {
       width: 50px;
       height: 50px;
+    }
+  }
+}
+@media (min-width: 683px) and (max-width: 1075px) {
+  .pok {
+    width: 150px;
+    height: 100px;
+    h1 {
+      font-size: 17px;
+    }
+    img {
+      width: 120px;
+      height: 80px;
     }
   }
 }
@@ -41,6 +57,9 @@
   .pok {
     width: 80px;
     height: 80px;
+    h1 {
+      font-size: 13px;
+    }
     img {
       width: 50px;
       height: 50px;
