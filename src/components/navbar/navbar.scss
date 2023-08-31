@@ -58,3 +58,14 @@
     }
   }
 }
+
+@media (max-width: 390px) {
+  .navbar {
+    span {
+      font-size: 15px;
+    }
+    input {
+      width: 200px;
+    }
+  }
+}

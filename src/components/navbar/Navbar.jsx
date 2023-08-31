@@ -97,8 +97,8 @@ const Navbar = ({ data, setData }) => {
         <div
           className="t-button"
           onClick={() => {
-            handleClick();
             playsound();
+            handleClick();
           }}
           style={{ left: theme.state.lightMode ? 0 : 25 }}
         ></div>
