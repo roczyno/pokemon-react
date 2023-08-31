@@ -26,7 +26,7 @@
   }
 }
 
-@media (max-width: 390px) {
+@media (min-width: 390px) and (max-width: 682px) {
   .pok {
     width: 100px;
     height: 100px;

@@ -59,13 +59,21 @@
   }
 }
 
-@media (max-width: 390px) {
+@media (min-width: 390px) and (max-width: 682px) {
   .navbar {
     span {
       font-size: 15px;
     }
     input {
       width: 200px;
+    }
+  }
+}
+
+@media (min-width: 694px) {
+  .navbar {
+    input {
+      width: 350px;
     }
   }
 }
